@@ -9,6 +9,10 @@
         "list": "cpp",
         "set": "cpp",
         "xtree": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "chrono": "cpp",
+        "forward_list": "cpp",
+        "initializer_list": "cpp",
+        "xutility": "cpp"
     }
 }

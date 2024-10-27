@@ -30,6 +30,10 @@ void insertingVec(vector<string>&, string);
 void insertingList(list<string>&, string);
 void insertingSet(set<string>&, string);
 
+void deletingVec(vector<string>&);
+void deletingList(list<string>&);
+int deletingSet(set<string>&);
+
 int main() {
     vector<string> testv;
     list<string> testl;
@@ -87,8 +91,8 @@ int main() {
 
     cout << left << setw(10) << "Insert" << setw(10) << insertDurationV.count() << setw(10) << insertDurationL.count() << setw(10) << insertDurationS.count() << endl;
 
+    // deleting
 
-    
     return 0;
 }
 
@@ -145,6 +149,22 @@ void insertingList(list<string>& l, string stringInsert) {
 
 void insertingSet(set<string>& s, string stringInsert) {
     s.insert(stringInsert);
+}
+
+void deletingVec(vector<string>& v) {
+    int middle = v.size() / 2;
+    v.erase(v.begin() + middle);
+}
+
+void deletingList(list<string>& l) {
+    int middle = l.size() / 2;
+    auto it = l.begin();
+    advance(it, middle);
+    l.erase(it);
+}
+
+int deletingSet(set<string>& s) {
+
 }
 
 /* syntax examples:
