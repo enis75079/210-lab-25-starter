@@ -52,11 +52,24 @@ int main() {
 
     cout << endl;
 
+    // sorting
     start = high_resolution_clock::now();
     sortingVec(testv);
     end = high_resolution_clock::now();
+    auto sortDurationV = duration_cast<milliseconds>(end - start);
+    cout << sortDurationV.count() << endl;
+
+    start = high_resolution_clock::now();
+    sortingList(testl);
+    end = high_resolution_clock::now();
     auto sortDurationL = duration_cast<milliseconds>(end - start);
     cout << sortDurationL.count() << endl;
+
+    start = high_resolution_clock::now();
+    sortingSet(tests);
+    end = high_resolution_clock::now();
+    auto sortDurationS = duration_cast<milliseconds>(end - start);
+    cout << sortDurationS.count() << endl;
 
 
 
