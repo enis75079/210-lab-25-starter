@@ -12,6 +12,7 @@ Naveen Islam
 #include <list>
 #include <set>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 using namespace std::chrono;
 
@@ -25,26 +26,42 @@ int main() {
     set<string> tests;
 
     // reading
-    auto start = high_resolution_clock::now();
-    auto end = high_resolution_clock::now();
-    auto duration = duration_cast<milliseconds>(end - start);
 
-    start = high_resolution_clock::now();
-    reading(testv, testl, tests);
-    end = high_resolution_clock::now();
-    int readVec = duration.count();
+    for (int i = 0; i < 3; i++) {
+        auto start = high_resolution_clock::now();
+        reading(testv, testl, tests);
+        auto end = high_resolution_clock::now();
+        auto duration = duration_cast<milliseconds>(end - start);
+        cout << duration.count() << endl;
+    }
 
-    cout << left << setw(10) << "Read" << readVec << endl;
+
     return 0;
 }
 
-void reading(vector<string>& v, list<string>& l, set<string>& s) {
-    string test;
+void readingVec(vector<string>& v) {
+    string read;
     ifstream file("codes.txt");
-    while(getline(file, test)) {
-        v.push_back(test);
-        l.push_back(test);
-        s.insert(test); 
+    while(getline(file, read)) {
+        v.push_back(read);
+    }
+    file.close();
+}
+
+void readingList(list<string>& v) {
+    string read;
+    ifstream file("codes.txt");
+    while(getline(file, read)) {
+        v.push_back(read);
+    }
+    file.close();
+}
+
+void readingSet(set<string>& v) {
+    string read;
+    ifstream file("codes.txt");
+    while(getline(file, read)) {
+        v.push_back(read);
     }
     file.close();
 }
