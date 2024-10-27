@@ -16,19 +16,17 @@ using namespace std;
 
 // function prototypes
 void reading(vector<string>&, list<string>&, set<string>&);
+void sorting(vector<string>&, list<string>&, set<string>&);
 
 int main() {
     vector<string> testv;
     list<string> testl;
     set<string> tests;
 
+    auto start = high_resolution_clock::now();
     reading(testv, testl, tests);
 
-    cout << testv[5] << endl;
     
-    for (const string &x : testl) {
-        cout << x << endl;
-    }
     return 0;
 }
 
@@ -42,6 +40,11 @@ void reading(vector<string>& v, list<string>& l, set<string>& s) {
     }
     file.close();
 }
+
+void sorting(vector<string>&, list<string>&, set<string>&) {
+
+}
+
 
 /* syntax examples:
 auto start = high_resolution_clock::now()
