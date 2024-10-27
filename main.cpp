@@ -92,6 +92,20 @@ int main() {
     cout << left << setw(10) << "Insert" << setw(10) << insertDurationV.count() << setw(10) << insertDurationL.count() << setw(10) << insertDurationS.count() << endl;
 
     // deleting
+    auto start = high_resolution_clock::now();
+    deletingVec(testv);
+    auto end = high_resolution_clock::now();
+    auto deleteDurationV = duration_cast<milliseconds>(end - start);
+
+    start = high_resolution_clock::now();
+    deletingList(testl);
+    end = high_resolution_clock::now();
+    auto deleteDurationL = duration_cast<milliseconds>(end - start);
+
+    start = high_resolution_clock::now();
+    deletingSet(tests);
+    end = high_resolution_clock::now();
+    auto deleteDurationS = duration_cast<milliseconds>(end - start);
 
     return 0;
 }
@@ -164,7 +178,10 @@ void deletingList(list<string>& l) {
 }
 
 int deletingSet(set<string>& s) {
-
+    int middle = s.size() / 2;
+    auto it = s.begin();
+    advance(it, middle);
+    s.erase(it);
 }
 
 /* syntax examples:
