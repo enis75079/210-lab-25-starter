@@ -26,9 +26,9 @@ void sortingVec(vector<string>&);
 void sortingList(list<string>&);
 void sortingSet(set<string>&);
 
-void insertingVec(vector<string>&);
-void insertingList(list<string>&);
-void insertingSet(set<string>&);
+void insertingVec(vector<string>&, string);
+void insertingList(list<string>&, string);
+void insertingSet(set<string>&, string);
 
 int main() {
     vector<string> testv;
@@ -74,7 +74,7 @@ int main() {
     cout << endl;
 
     // inserting
-
+    insertingVec(testv, "TESTCODE");
 
     return 0;
 }
@@ -118,16 +118,17 @@ void sortingSet(set<string>& s) {
     cout << "-1" << endl;
 }
 
-void insertingVec(vector<string>&) {
+void insertingVec(vector<string>& v, string stringInsert) {
+    int middle = v.size() / 2;
+    cout << middle << endl;
+}
+
+void insertingList(list<string>&, string stringInsert) {
 
 }
 
-void insertingList(list<string>&) {
+void insertingSet(set<string>&, string stringInsert) {
 
-}
-
-void insertingSet(set<string>&) {
-    
 }
 
 /* syntax examples:
