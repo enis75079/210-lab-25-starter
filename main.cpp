@@ -40,34 +40,29 @@ int main() {
     readingVec(testv);
     auto end = high_resolution_clock::now();
     auto durationV = duration_cast<milliseconds>(end - start);
-    cout << durationV.count() << endl;
 
     start = high_resolution_clock::now();
     readingList(testl);
     end = high_resolution_clock::now();
     auto durationL = duration_cast<milliseconds>(end - start);
-    cout << durationL.count() << endl;
 
     start = high_resolution_clock::now();
     readingSet(tests);
     end = high_resolution_clock::now();
     auto durationS = duration_cast<milliseconds>(end - start);
-    cout << durationS.count() << endl;
 
-    cout << endl;
+    cout << left << setw(10) << "Read" << setw(10) << durationV.count() << setw(10) << durationL.count() << setw(10) << durationS.count() << endl;
 
     // sorting
     start = high_resolution_clock::now();
     sortingVec(testv);
     end = high_resolution_clock::now();
     auto sortDurationV = duration_cast<milliseconds>(end - start);
-    cout << sortDurationV.count() << endl;
 
     start = high_resolution_clock::now();
     sortingList(testl);
     end = high_resolution_clock::now();
     auto sortDurationL = duration_cast<milliseconds>(end - start);
-    cout << sortDurationL.count() << endl;
 
     sortingSet(tests);
 
@@ -133,10 +128,7 @@ void insertingList(list<string>& l, string stringInsert) {
 }
 
 void insertingSet(set<string>& s, string stringInsert) {
-    int middle = s.size() / 2;
-    auto it = s.begin();
-    advance(it, middle);
-    s.insert(it, stringInsert);
+    s.insert(stringInsert);
 }
 
 /* syntax examples:
