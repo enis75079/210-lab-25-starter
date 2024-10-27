@@ -13,6 +13,7 @@ Naveen Islam
 #include <set>
 #include <fstream>
 #include <iomanip>
+#include <algorithm>
 using namespace std;
 using namespace std::chrono;
 
@@ -83,8 +84,17 @@ void readingSet(set<string>& s) {
     file.close();
 }
 
-void sorting
+void sortingVec(vector<string>& v) {
+    sort(v.begin(), v.end());
+}
 
+void sortingList(list<string>& s) {
+    s.sort();
+}
+
+void sortingSet(set<string>& s) {
+    cout << "-1" << endl;
+}
 
 /* syntax examples:
 auto start = high_resolution_clock::now()
