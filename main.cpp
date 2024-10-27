@@ -24,10 +24,17 @@ int main() {
     list<string> testl;
     set<string> tests;
 
+    // reading
     auto start = high_resolution_clock::now();
-    reading(testv, testl, tests);
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
 
-    
+    start = high_resolution_clock::now();
+    reading(testv, testl, tests);
+    end = high_resolution_clock::now();
+    int readVec = duration.count();
+
+    cout << left << setw(10) << "Read" << readVec << endl;
     return 0;
 }
 
