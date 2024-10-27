@@ -24,7 +24,7 @@ void readingSet(set<string>&);
 
 void sortingVec(vector<string>&);
 void sortingList(list<string>&);
-void sortingSet(set<string>&);
+int sortingSet(set<string>&);
 
 void insertingVec(vector<string>&, string);
 void insertingList(list<string>&, string);
@@ -35,6 +35,9 @@ int main() {
     list<string> testl;
     set<string> tests;
 
+    // header
+    cout << left << setw(10) << "Operation" << setw(10) << "Vector" << setw(10) << "List" << setw(10) << "Set" << endl;
+    
     // reading
     auto start = high_resolution_clock::now();
     readingVec(testv);
@@ -64,7 +67,7 @@ int main() {
     end = high_resolution_clock::now();
     auto sortDurationL = duration_cast<milliseconds>(end - start);
 
-    sortingSet(tests);
+    cout << left << setw(10) << "Sort" << setw(10) << sortDurationV.count() << setw(10) << sortDurationL.count() << setw(10) << sortingSet(tests) << endl;
 
     cout << endl;
 
@@ -111,8 +114,8 @@ void sortingList(list<string>& s) {
     s.sort();
 }
 
-void sortingSet(set<string>& s) {
-    cout << "-1" << endl;
+int sortingSet(set<string>& s) {
+    return -1;
 }
 
 void insertingVec(vector<string>& v, string stringInsert) {
