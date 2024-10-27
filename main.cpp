@@ -18,62 +18,70 @@ using namespace std;
 using namespace std::chrono;
 
 // function prototypes
+// reading functions
 void readingVec(vector<string>&);
 void readingList(list<string>&);
 void readingSet(set<string>&);
 
+// sorting functions
 void sortingVec(vector<string>&);
 void sortingList(list<string>&);
 int sortingSet(set<string>&);
 
+// inserting functions
 void insertingVec(vector<string>&, string);
 void insertingList(list<string>&, string);
 void insertingSet(set<string>&, string);
 
+// deleting functions
 void deletingVec(vector<string>&);
 void deletingList(list<string>&);
 int deletingSet(set<string>&);
 
+// main function
 int main() {
+    // create vector, list, and set object
     vector<string> testv;
     list<string> testl;
     set<string> tests;
 
-    // header
+    // output header
     cout << left << setw(10) << "Operation" << setw(10) << "Vector" << setw(10) << "List" << setw(10) << "Set" << endl;
     
-    // reading
+    // reading race (changed to microseconds due to insert operations completing too quickly)
     auto start = high_resolution_clock::now();
     readingVec(testv);
     auto end = high_resolution_clock::now();
-    auto durationV = duration_cast<milliseconds>(end - start);
+    auto durationV = duration_cast<microseconds>(end - start);
 
     start = high_resolution_clock::now();
     readingList(testl);
     end = high_resolution_clock::now();
-    auto durationL = duration_cast<milliseconds>(end - start);
+    auto durationL = duration_cast<microseconds>(end - start);
 
     start = high_resolution_clock::now();
     readingSet(tests);
     end = high_resolution_clock::now();
-    auto durationS = duration_cast<milliseconds>(end - start);
+    auto durationS = duration_cast<microseconds>(end - start);
 
+    // read output
     cout << left << setw(10) << "Read" << setw(10) << durationV.count() << setw(10) << durationL.count() << setw(10) << durationS.count() << endl;
 
-    // sorting
+    // sorting race (changed to microseconds due to insert operations completing too quickly)
     start = high_resolution_clock::now();
     sortingVec(testv);
     end = high_resolution_clock::now();
-    auto sortDurationV = duration_cast<milliseconds>(end - start);
+    auto sortDurationV = duration_cast<microseconds>(end - start);
 
     start = high_resolution_clock::now();
     sortingList(testl);
     end = high_resolution_clock::now();
-    auto sortDurationL = duration_cast<milliseconds>(end - start);
+    auto sortDurationL = duration_cast<microseconds>(end - start);
 
+    // sort output
     cout << left << setw(10) << "Sort" << setw(10) << sortDurationV.count() << setw(10) << sortDurationL.count() << setw(10) << sortingSet(tests) << endl;
 
-    // inserting (changed to microseconds due to insert operaions completing too quickly)
+    // inserting race (changed to microseconds due to insert operations completing too quickly)
     start = high_resolution_clock::now();
     insertingVec(testv, "TESTCODE");
     end = high_resolution_clock::now();
@@ -89,29 +97,33 @@ int main() {
     end = high_resolution_clock::now();
     auto insertDurationS = duration_cast<microseconds>(end - start);
 
+    // insert output
     cout << left << setw(10) << "Insert" << setw(10) << insertDurationV.count() << setw(10) << insertDurationL.count() << setw(10) << insertDurationS.count() << endl;
 
-    // deleting
+    // deleting race (changed to microseconds due to insert operations completing too quickly)
     start = high_resolution_clock::now();
     deletingVec(testv);
     end = high_resolution_clock::now();
-    auto deleteDurationV = duration_cast<milliseconds>(end - start);
+    auto deleteDurationV = duration_cast<microseconds>(end - start);
 
     start = high_resolution_clock::now();
     deletingList(testl);
     end = high_resolution_clock::now();
-    auto deleteDurationL = duration_cast<milliseconds>(end - start);
+    auto deleteDurationL = duration_cast<microseconds>(end - start);
 
     start = high_resolution_clock::now();
     deletingSet(tests);
     end = high_resolution_clock::now();
-    auto deleteDurationS = duration_cast<milliseconds>(end - start);
+    auto deleteDurationS = duration_cast<microseconds>(end - start);
 
+    // delete output
     cout << left << setw(10) << "Delete" << setw(10) << deleteDurationV.count() << setw(10) << deleteDurationL.count() << setw(10) << deleteDurationS.count() << endl;
 
     return 0;
 }
 
+
+// readingVec function. reads a file and inputs the values into the parameter vector
 void readingVec(vector<string>& v) {
     string read;
     ifstream file("codes.txt");
@@ -121,6 +133,7 @@ void readingVec(vector<string>& v) {
     file.close();
 }
 
+// readinglist function. reads a file and inputs the values into the parameter list
 void readingList(list<string>& l) {
     string read;
     ifstream file("codes.txt");
@@ -130,6 +143,7 @@ void readingList(list<string>& l) {
     file.close();
 }
 
+// readingSet function. reads a file and inputs the values into the parameter set
 void readingSet(set<string>& s) {
     string read;
     ifstream file("codes.txt");
@@ -139,23 +153,28 @@ void readingSet(set<string>& s) {
     file.close();
 }
 
+// sortingVec function. sorts the parameter vector by increasing
 void sortingVec(vector<string>& v) {
     sort(v.begin(), v.end());
 }
 
+// sortingVec function. sorts the parameter list by increasing
 void sortingList(list<string>& s) {
     s.sort();
 }
 
+// sortingSet function. set is already sorted, so just returns -1
 int sortingSet(set<string>& s) {
     return -1;
 }
 
+// insertingVec function. inserts the parameter string into the middle of the parameter vector
 void insertingVec(vector<string>& v, string stringInsert) {
     int middle = v.size() / 2;
     v.insert(v.begin() + middle, stringInsert);
 }
 
+// insertingList function. inserts the parameter string into the middle of the parameter list
 void insertingList(list<string>& l, string stringInsert) {
     int middle = l.size() / 2;
     auto it = l.begin();
@@ -163,6 +182,7 @@ void insertingList(list<string>& l, string stringInsert) {
     l.insert(it, stringInsert);
 }
 
+// insertingSet function. inserts the parameter string the parameter set
 void insertingSet(set<string>& s, string stringInsert) {
     s.insert(stringInsert);
 }
