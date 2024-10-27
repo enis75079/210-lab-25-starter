@@ -21,7 +21,10 @@ int main() {
     while(getline(file, test)) {
         v.push_back(test);
     }
+    file.close();
 
+    cout << v[5] << endl;
+    
     return 0;
 }
 
