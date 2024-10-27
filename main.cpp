@@ -52,6 +52,12 @@ int main() {
 
     cout << endl;
 
+    start = high_resolution_clock::now();
+    sortingVec(testv);
+    end = high_resolution_clock::now();
+    auto sortDurationL = duration_cast<milliseconds>(end - start);
+    cout << sortDurationL.count() << endl;
+
 
 
     return 0;
