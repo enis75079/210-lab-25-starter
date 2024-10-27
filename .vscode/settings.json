@@ -6,6 +6,7 @@
         "ostream": "cpp",
         "string": "cpp",
         "format": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "set": "cpp"
     }
 }
