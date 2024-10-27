@@ -14,6 +14,8 @@ Naveen Islam
 #include <fstream>
 using namespace std;
 
+void reading(vector<string>&, const string&);
+
 int main() {
     vector<string> v;
     string test;
@@ -24,8 +26,20 @@ int main() {
     file.close();
 
     cout << v[5] << endl;
-    
+
     return 0;
+}
+
+void reading(vector<string>& v) {
+    string test;
+    ifstream file("codes.txt");
+    while(getline(file, test)) {
+        v.push_back(test);
+    }
+    file.close();
+
+    cout << v[5] << endl;
+
 }
 
 /* syntax examples:
