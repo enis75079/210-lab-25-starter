@@ -127,6 +127,7 @@ void insertingVec(vector<string>& v, string stringInsert) {
 
 void insertingList(list<string>& l, string stringInsert) {
     int middle = l.size() / 2;
+    l.insert(middle, stringInsert);
 }
 
 void insertingSet(set<string>& s, string stringInsert) {
