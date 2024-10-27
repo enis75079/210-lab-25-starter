@@ -15,20 +15,30 @@ Naveen Islam
 using namespace std;
 
 // function prototypes
-void reading(vector<string>&);
+void reading(vector<string>&, list<string>&, set<string>&);
 
 int main() {
     vector<string> testv;
-    reading(testv);
+    list<string> testl;
+    set<string> tests;
+
+    reading(testv, testl, tests);
+
     cout << testv[5] << endl;
+    
+    for (const string &x : testl) {
+        cout << x << endl;
+    }
     return 0;
 }
 
-void reading(vector<string>& v) {
+void reading(vector<string>& v, list<string>& l, set<string>& s) {
     string test;
     ifstream file("codes.txt");
     while(getline(file, test)) {
         v.push_back(test);
+        l.push_back(test);
+        s.insert(test); 
     }
     file.close();
 }
