@@ -127,11 +127,16 @@ void insertingVec(vector<string>& v, string stringInsert) {
 
 void insertingList(list<string>& l, string stringInsert) {
     int middle = l.size() / 2;
-    l.insert(middle, stringInsert);
+    auto it = l.begin();
+    advance(it, middle);
+    l.insert(it, stringInsert);
 }
 
 void insertingSet(set<string>& s, string stringInsert) {
-
+    int middle = s.size() / 2;
+    auto it = s.begin();
+    advance(it, middle);
+    s.insert(it, stringInsert);
 }
 
 /* syntax examples:
