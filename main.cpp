@@ -75,6 +75,8 @@ int main() {
 
     // inserting
     insertingVec(testv, "TESTCODE");
+    insertingList(testl, "TESTCODE");
+
 
     return 0;
 }
@@ -123,11 +125,11 @@ void insertingVec(vector<string>& v, string stringInsert) {
     v.insert(v.begin() + middle, stringInsert);
 }
 
-void insertingList(list<string>&, string stringInsert) {
-
+void insertingList(list<string>& l, string stringInsert) {
+    int middle = l.size() / 2;
 }
 
-void insertingSet(set<string>&, string stringInsert) {
+void insertingSet(set<string>& s, string stringInsert) {
 
 }
 
