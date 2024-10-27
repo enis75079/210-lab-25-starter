@@ -69,26 +69,26 @@ int main() {
 
     cout << left << setw(10) << "Sort" << setw(10) << sortDurationV.count() << setw(10) << sortDurationL.count() << setw(10) << sortingSet(tests) << endl;
 
-    cout << endl;
-
-    // inserting
+    // inserting (changed to microseconds due to insert operaions completing too quickly)
     start = high_resolution_clock::now();
     insertingVec(testv, "TESTCODE");
     end = high_resolution_clock::now();
-    auto insertDurationV = duration_cast<milliseconds>(end - start);
+    auto insertDurationV = duration_cast<microseconds>(end - start);
 
     start = high_resolution_clock::now();
     insertingList(testl, "TESTCODE");
     end = high_resolution_clock::now();
-    auto insertDurationL = duration_cast<milliseconds>(end - start);
+    auto insertDurationL = duration_cast<microseconds>(end - start);
 
     start = high_resolution_clock::now();
     insertingSet(tests, "TESTCODE");
     end = high_resolution_clock::now();
-    auto insertDurationS = duration_cast<milliseconds>(end - start);
+    auto insertDurationS = duration_cast<microseconds>(end - start);
 
     cout << left << setw(10) << "Insert" << setw(10) << insertDurationV.count() << setw(10) << insertDurationL.count() << setw(10) << insertDurationS.count() << endl;
 
+
+    
     return 0;
 }
 
