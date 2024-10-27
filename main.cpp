@@ -187,11 +187,13 @@ void insertingSet(set<string>& s, string stringInsert) {
     s.insert(stringInsert);
 }
 
+// deletingVec function. deletes the middle string of the parameter vector
 void deletingVec(vector<string>& v) {
     int middle = v.size() / 2;
     v.erase(v.begin() + middle);
 }
 
+// deletingList function. deletes the middle string of the parameter list
 void deletingList(list<string>& l) {
     int middle = l.size() / 2;
     auto it = l.begin();
@@ -199,6 +201,7 @@ void deletingList(list<string>& l) {
     l.erase(it);
 }
 
+// deletingSet function. deletes the middle string of the parameter set
 int deletingSet(set<string>& s) {
     int middle = s.size() / 2;
     auto it = s.begin();
