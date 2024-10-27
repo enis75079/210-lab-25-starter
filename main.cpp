@@ -10,10 +10,13 @@ Naveen Islam
 #include <vector>
 #include <list>
 #include <set>
+#include <fstream>
 using namespace std;
 
 int main() {
-    
+    vector<string> v;
+    ifstream("codes.txt");
+    while(getline())
 
     return 0;
 }
