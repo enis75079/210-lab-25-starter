@@ -1,5 +1,15 @@
+/*
+
+lab25: data structures races
+COMSC-210
+Naveen Islam
+
+*/
 #include <iostream>
 #include <chrono>
+#include <vector>
+#include <list>
+#include <set>
 using namespace std;
 
 int main() {
