@@ -72,9 +72,22 @@ int main() {
     cout << endl;
 
     // inserting
+    start = high_resolution_clock::now();
     insertingVec(testv, "TESTCODE");
-    insertingList(testl, "TESTCODE");
+    end = high_resolution_clock::now();
+    auto insertDurationV = duration_cast<milliseconds>(end - start);
 
+    start = high_resolution_clock::now();
+    insertingList(testl, "TESTCODE");
+    end = high_resolution_clock::now();
+    auto insertDurationL = duration_cast<milliseconds>(end - start);
+
+    start = high_resolution_clock::now();
+    insertingSet(tests, "TESTCODE");
+    end = high_resolution_clock::now();
+    auto insertDurationS = duration_cast<milliseconds>(end - start);
+
+    cout << left << setw(10) << "Insert" << setw(10) << insertDurationV.count() << setw(10) << insertDurationL.count() << setw(10) << insertDurationS.count() << endl;
 
     return 0;
 }
