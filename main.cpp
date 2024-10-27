@@ -120,7 +120,7 @@ void sortingSet(set<string>& s) {
 
 void insertingVec(vector<string>& v, string stringInsert) {
     int middle = v.size() / 2;
-    cout << middle << endl;
+    v.insert(v.begin() + middle, stringInsert);
 }
 
 void insertingList(list<string>&, string stringInsert) {
