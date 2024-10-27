@@ -6,6 +6,7 @@ Naveen Islam
 
 */
 #include <iostream>
+#include <string>
 #include <chrono>
 #include <vector>
 #include <list>
@@ -15,8 +16,11 @@ using namespace std;
 
 int main() {
     vector<string> v;
-    ifstream("codes.txt");
-    while(getline())
+    string test;
+    ifstream file("codes.txt");
+    while(getline(file, test)) {
+        v.push_back(test);
+    }
 
     return 0;
 }
