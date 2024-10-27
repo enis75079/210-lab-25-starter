@@ -92,9 +92,9 @@ int main() {
     cout << left << setw(10) << "Insert" << setw(10) << insertDurationV.count() << setw(10) << insertDurationL.count() << setw(10) << insertDurationS.count() << endl;
 
     // deleting
-    auto start = high_resolution_clock::now();
+    start = high_resolution_clock::now();
     deletingVec(testv);
-    auto end = high_resolution_clock::now();
+    end = high_resolution_clock::now();
     auto deleteDurationV = duration_cast<milliseconds>(end - start);
 
     start = high_resolution_clock::now();
@@ -106,6 +106,8 @@ int main() {
     deletingSet(tests);
     end = high_resolution_clock::now();
     auto deleteDurationS = duration_cast<milliseconds>(end - start);
+
+    cout << left << setw(10) << "Delete" << setw(10) << deleteDurationV.count() << setw(10) << deleteDurationL.count() << setw(10) << deleteDurationS.count() << endl;
 
     return 0;
 }

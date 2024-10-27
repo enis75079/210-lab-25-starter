@@ -13,6 +13,7 @@
         "chrono": "cpp",
         "forward_list": "cpp",
         "initializer_list": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "iosfwd": "cpp"
     }
 }
