@@ -17,7 +17,10 @@ using namespace std;
 using namespace std::chrono;
 
 // function prototypes
-void reading(vector<string>&, list<string>&, set<string>&);
+void readingVec(vector<string>&);
+void readingList(list<string>&);
+void readingSet(set<string>&);
+
 void sorting(vector<string>&, list<string>&, set<string>&);
 
 int main() {
